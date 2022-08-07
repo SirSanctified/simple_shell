@@ -10,11 +10,11 @@
 int handle_builtin(char **cmd, int er)
 {
 	 bul_t bil[] = {
-		{"cd", change_dir},
-		{"env", dis_env},
-		{"help", display_help},
-		{"echo", echo_bul},
-		{"history", history_dis},
+		{"cd", cd},
+		{"env", this_env},
+		{"help", help},
+		{"echo", echo},
+		{"history", _history},
 		{NULL, NULL}
 	};
 	int i = 0;
