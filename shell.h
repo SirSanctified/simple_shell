@@ -53,4 +53,12 @@ int cd(char **cmd, __attribute__((unused))int er);
 void  exit(char **cmd, char *input, char **argv, int c);
 int print_echo(char **cmd);
 int _history(__attribute__((unused))char **c, __attribute__((unused))int s);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+void free_all(char **cmd, char *line);
+char *_memcpy(char *dest, char *src, unsigned int n);
+void *fill_an_array(void *a, int el, unsigned int len);
+void *_calloc(unsigned int size);
+void signal_to_handel(int sig);
+int check_cmd(char **cmd, char *input, int c, char **argv);
+int handle_builtin(char **cmd, int er);
 #endif

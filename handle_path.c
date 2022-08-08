@@ -1,6 +1,6 @@
 #include "shell.h"
 
-/**                                          * path_cmd -  Search In $PATH For Excutable Command
+/**                                          * path_cmd -  Search In $PATH For Executable Command
  * @cmd: Parsed Input                        * Return: 1  Failure  0  Success.
  */
 int path_cmd(char **cmd)
@@ -28,8 +28,8 @@ int path_cmd(char **cmd)
 }
 /**
  * build - Build Command
- * @token: Excutable Command
- * @value: Dirctory Conatining Command
+ * @token: Executable Command
+ * @value: Directory Containing Command
  *
  * Return: Parsed Full Path Of Command Or NULL Case Failed
  */

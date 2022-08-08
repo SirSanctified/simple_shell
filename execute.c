@@ -3,8 +3,8 @@
 /**
  * handle_builtin - Handle Builtin Command
  * @cmd: Parsed Command
- * @er:statue of last Excute
- * Return: -1 Fail 0 Succes (Return :Excute Builtin)
+ * @er:statue of last Execute
+ * Return: -1 Fail 0 Succes (Return :Execute Builtin)
  */
 
 int handle_builtin(char **cmd, int er)
@@ -30,13 +30,13 @@ int handle_builtin(char **cmd, int er)
 	return (-1);
 }
 /**
- * check_cmd - Excute Simple Shell Command (Fork,Wait,Excute)
+ * check_cmd - Execute Simple Shell Command (Fork,Wait,Execute)
  *
  * @cmd:Parsed Command
  * @input: User Input
- * @c:Shell Excution Time Case of Command Not Found
+ * @c:Shell Execution Time Case of Command Not Found
  * @argv:Program Name
- * Return: 1 Case Command Null -1 Wrong Command 0 Command Excuted
+ * Return: 1 Case Command Null -1 Wrong Command 0 Command Executed
  */
 int check_cmd(char **cmd, char *input, int c, char **argv)
 {
