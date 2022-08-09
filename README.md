@@ -138,7 +138,7 @@ $ ./sodash $ setenv NAME Holberton $ unsetenv NAME $ echo $NAME
 $
 
 Authors & Copyrights
-Pritchard 
+Pritchard Mambambo
 Munashe R Mhlanga
 
 More information
