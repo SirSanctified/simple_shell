@@ -60,7 +60,7 @@ int this_env(__attribute__((unused)) char **cmd, __attribute__((unused)) int er)
 void print_number(unsigned int n);
 void print_number_in(int n);
 int _cd(char **cmd, __attribute__((unused))int er);
-void  _exit_(char **cmd, char *input, char **argv, int c);
+void  _exit_();
 int print_echo(char **cmd);
 int _history(__attribute__((unused))char **c, __attribute__((unused))int s);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
