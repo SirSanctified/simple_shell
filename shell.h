@@ -61,4 +61,6 @@ void *_calloc(unsigned int size);
 void signal_to_handel(int sig);
 int check_cmd(char **cmd, char *input, int c, char **argv);
 int handle_builtin(char **cmd, int er);
+int history(char *input);
+void free_env(char **env);
 #endif
