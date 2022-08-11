@@ -1,13 +1,14 @@
 #include "shell.h"
+
 /**
- * exit - Exit Shell
- * @cmd: Parsed Command
- * @input: User Input
- * @argv:Program Name
- * @c:Execute Count
+ * _exit_ - Exit Shell
+ *
+ * Description: built-in exit
+ *
  * Return: Void (Exit Status)
  */
-void  _exit_()
+
+void  _exit_(void)
 {
 		exit(EXIT_SUCCESS);
 }
@@ -15,7 +16,7 @@ void  _exit_()
 
 
 /**
- * cd - Change Directory
+ * _cd - Change Directory
  * @cmd: Parsed Command
  * @er: Status of Last Command Executed
  * Return: 0 Success 1 Failed (For Old Pwd Always 0 Case No Old PWD)
@@ -53,7 +54,8 @@ int _cd(char **cmd, __attribute__((unused))int er)
  * @er:Status of Last command Executed
  * Return:Always 0
  */
-int this_env(__attribute__((unused)) char **cmd, __attribute__((unused)) int er)
+int this_env(__attribute__((unused)) char **cmd,
+		__attribute__((unused)) int er)
 {
 size_t i;
 	int len;
@@ -67,7 +69,7 @@ size_t i;
 	return (0);
 }
 /**
- * help - Displaying Help For Builtin
+ * _help - Displaying Help For Builtin
  * @cmd:Parsed Command
  * @er: Status Of Last Command Executed
  * Return: 0 Succes -1 Fail
@@ -96,7 +98,7 @@ int _help(char **cmd, __attribute__((unused))int er)
 	return (0);
 }
 /**
- * echo - Execute Echo Cases
+ * _echo - Execute Echo Cases
  * @st:Statue Of Last Command Executed
  * @cmd: Parsed Command
  * Return: Always 0 Or Execute Normal Echo

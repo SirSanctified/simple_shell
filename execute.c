@@ -9,7 +9,7 @@
 
 int handle_builtin(char **cmd, int er)
 {
-	 bul_t bil[] = {
+	bul_t bil[] = {
 		{"cd", _cd},
 		{"env", this_env},
 		{"help", _help},
@@ -17,6 +17,7 @@ int handle_builtin(char **cmd, int er)
 		{"history", _history},
 		{NULL, NULL}
 	};
+
 	int i = 0;
 
 	while ((bil + i)->command)
@@ -29,6 +30,7 @@ int handle_builtin(char **cmd, int er)
 	}
 	return (-1);
 }
+
 /**
  * check_cmd - Execute Simple Shell Command (Fork,Wait,Execute)
  *
@@ -38,6 +40,7 @@ int handle_builtin(char **cmd, int er)
  * @argv:Program Name
  * Return: 1 Case Command Null -1 Wrong Command 0 Command Executed
  */
+
 int check_cmd(char **cmd, char *input, int c, char **argv)
 {
 	int status;
@@ -74,11 +77,13 @@ int check_cmd(char **cmd, char *input, int c, char **argv)
 	wait(&status);
 	return (0);
 }
+
 /**
  * signal_to_handel - Handle ^C
  * @sig:Captured Signal
  * Return: Void
  */
+
 void signal_to_handel(int sig)
 {
 	if (sig == SIGINT)
@@ -92,28 +97,29 @@ void signal_to_handel(int sig)
  * @input:User Input To Parse
  * Return: Array Of Char (Parsed):Simple Shell
  */
+
 char **parse_cmd(char *input)
 {
-        char **tokens;
-        char *token;
-        int i, buffsize = BUFSIZE;
+	char **tokens;
+	char *token;
+	int i, buffsize = BUFSIZE;
 
-        if (input == NULL)
-                return (NULL);
-        tokens = malloc(sizeof(char *) * buffsize);
-        if (!tokens)
-        {
-                perror("hsh");
-                return (NULL);
-        }
+	if (input == NULL)
+		return (NULL);
+	tokens = malloc(sizeof(char *) * buffsize);
+	if (!tokens)
+	{
+		perror("hsh");
+		return (NULL);
+	}
 
-        token = _strtok(input, "\n ");
-        for (i = 0; token; i++)
-        {
-                tokens[i] = token;
-                token = _strtok(NULL, "\n ");
-        }
-        tokens[i] = NULL;
+	token = _strtok(input, "\n ");
+	for (i = 0; token; i++)
+	{
+		tokens[i] = token;
+		token = _strtok(NULL, "\n ");
+	}
+	tokens[i] = NULL;
 
-        return (tokens);
+	return (tokens);
 }

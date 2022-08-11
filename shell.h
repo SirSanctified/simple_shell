@@ -56,11 +56,12 @@ char *_getline();
 void hashtag_handle(char *buff);
 int _echo(char **cmd, int st);
 int _help(char **cmd, __attribute__((unused))int er);
-int this_env(__attribute__((unused)) char **cmd, __attribute__((unused)) int er);
+int this_env(__attribute__((unused))
+		char **cmd, __attribute__((unused)) int er);
 void print_number(unsigned int n);
 void print_number_in(int n);
 int _cd(char **cmd, __attribute__((unused))int er);
-void  _exit_();
+void  _exit_(void);
 int print_echo(char **cmd);
 int _history(__attribute__((unused))char **c, __attribute__((unused))int s);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
@@ -82,8 +83,8 @@ void free_env(char **env);
 
 typedef struct  bulltin
 {
-        char *command;
-        int (*fun)(char **line, int er);
+	char *command;
+	int (*fun)(char **line, int er);
 } bul_t;
 
 #endif
