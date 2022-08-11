@@ -1,12 +1,29 @@
-#include <stdio.h>
+#include "shell.h"
 
-int main (void)
+/**
+ * prompt - Display Shell Prompt
+ */
+void prompt(void)
 {
-	char *buffer = NULL;
-	size_t n = 0;
-
-	printf("$ ");
-	getline(&buffer, &n, stdin);
-	printf(">>>>>> %s\n", buffer);
+	PRINTER("$ ");
 }
+/**
+ * print_error - Display Error Based on Command and How Many Time Shell Looped
+ * @input:User Input
+ * @counter:Simple Shell Count Loop
+ * @argv:Program Name
+ * Return: Void
+ */
+void print_error(char *input, int counter, char **argv)
+{
+	char *er;
 
+	PRINTER(argv[0]);
+	PRINTER(": ");
+	er = _itoa(counter);
+	PRINTER(er);
+	free(er);
+	PRINTER(": ");
+	PRINTER(input);
+	PRINTER(": not found\n");
+}

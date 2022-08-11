@@ -23,12 +23,20 @@ extern char **environ;
 #include <linux/limits.h>
 
 
-
+void print_error(char *line, int c, char **argv);
 char *_strtok(char *str, const char *tok);
 unsigned int check_delim(char c, const char *str);
 char *_strncpy(char *dest, char *src, int n);
+void _prerror(char **argv, int c, char **cmd);
+void read_file(char *filename, char **argv);
+int check_builtin(char **cmd);
+void exit_bul_for_file(char **cmd, char *line, FILE *fd);
+void prompt(void);
+int history(char *input);
 int _strlen(char *s);
 int _putchar(char c);
+char **parse_cmd(char *input);
+void treat_file(char *line, int counter, FILE *fp, char **argv);
 int _atoi(char *s);
 void _puts(char *str);
 int _strcmp(char *s1, char *s2);
@@ -46,11 +54,13 @@ char *build(char *token, char *value);
 char *_getenv(char *name);
 char *_getline();
 void hashtag_handle(char *buff);
-int echo(char **cmd, int st);
-int help(char **cmd, __attribute__((unused))int er);
+int _echo(char **cmd, int st);
+int _help(char **cmd, __attribute__((unused))int er);
 int this_env(__attribute__((unused)) char **cmd, __attribute__((unused)) int er);
-int cd(char **cmd, __attribute__((unused))int er);
-void  exit(char **cmd, char *input, char **argv, int c);
+void print_number(unsigned int n);
+void print_number_in(int n);
+int _cd(char **cmd, __attribute__((unused))int er);
+void  _exit_(char **cmd, char *input, char **argv, int c);
 int print_echo(char **cmd);
 int _history(__attribute__((unused))char **c, __attribute__((unused))int s);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
@@ -63,4 +73,17 @@ int check_cmd(char **cmd, char *input, int c, char **argv);
 int handle_builtin(char **cmd, int er);
 int history(char *input);
 void free_env(char **env);
+
+/**
+ * struct bulltin - contain bultin to handle and function to excute
+ * @command:pointer to char
+ * @fun:fun to excute when bultin true
+ */
+
+typedef struct  bulltin
+{
+        char *command;
+        int (*fun)(char **line, int er);
+} bul_t;
+
 #endif

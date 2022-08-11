@@ -7,7 +7,7 @@
  * @c:Execute Count
  * Return: Void (Exit Status)
  */
-void  exit(char **cmd, char *input, char **argv, int c)
+void  _exit_(char **cmd, char *input, char **argv, int c)
 {
 	int statue, i = 0;
 
@@ -41,7 +41,7 @@ void  exit(char **cmd, char *input, char **argv, int c)
  * @er: Status of Last Command Executed
  * Return: 0 Success 1 Failed (For Old Pwd Always 0 Case No Old PWD)
  */
-int cd(char **cmd, __attribute__((unused))int er)
+int _cd(char **cmd, __attribute__((unused))int er)
 {
 	int value = -1;
 	char cwd[PATH_MAX];
@@ -93,7 +93,7 @@ size_t i;
  * @er: Status Of Last Command Executed
  * Return: 0 Succes -1 Fail
  */
-int help(char **cmd, __attribute__((unused))int er)
+int _help(char **cmd, __attribute__((unused))int er)
 {
 	int fd, fw, rd = 1;
 	char c;
@@ -122,7 +122,7 @@ int help(char **cmd, __attribute__((unused))int er)
  * @cmd: Parsed Command
  * Return: Always 0 Or Execute Normal Echo
  */
-int echo(char **cmd, int st)
+int _echo(char **cmd, int st)
 {
 	char *path;
 	unsigned int  pid = getppid();
